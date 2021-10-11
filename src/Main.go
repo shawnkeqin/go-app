@@ -20,20 +20,33 @@ const (
 	y = iota
 	z = iota 
 )
+
+const (
+	_ = iota + 5
+	catSpz
+	dogSpz
+	snakeSpz
+)
+
+
+
 func main(){
-	const a int = 42
-	const b string = "foo"
-	const c float32 = 3.14
-	const d bool = true
-	const e int = 39
-	fmt.Printf("%v, %T\n", a + e, a + e)
-	fmt.Printf("%v\n", a)
-	fmt.Printf("%v\n", b)
-	fmt.Printf("%v\n", c)
-	fmt.Printf("%v\n", d)
-	fmt.Printf("%v\n, %T\n", x, x)
-	fmt.Printf("%v\n, %T\n", y, y)
-	fmt.Printf("%v\n, %T\n", z, z)
+	// var spzType int
+	// fmt.Printf("%v\n", spzType == catSpz)
+	fmt.Printf("%v\n", catSpz)
+	// const a int = 42
+	// const b string = "foo"
+	// const c float32 = 3.14
+	// const d bool = true
+	// const e int = 39
+	// fmt.Printf("%v, %T\n", a + e, a + e)
+	// fmt.Printf("%v\n", a)
+	// fmt.Printf("%v\n", b)
+	// fmt.Printf("%v\n", c)
+	// fmt.Printf("%v\n", d)
+	// fmt.Printf("%v\n, %T\n", x, x)
+	// fmt.Printf("%v\n, %T\n", y, y)
+	// fmt.Printf("%v\n, %T\n", z, z)
 	// var r rune= 'a'
 	// fmt.Printf("%v, %T\n", r, r)
 	// var n complex128 = complex(5,12)
