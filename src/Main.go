@@ -32,6 +32,13 @@ const (
 
 func main(){
 	// a := make([]int, 3, 100)
+	statePopulations := map[string]int{
+		"Cali": 392545346,
+		"Texas": 335938595,
+		"New York": 348394975,
+		"Ohio": 3345459045,
+	}
+	fmt.Println(statePopulations)
 	a := []int{}
 	a = append(a,1)
 	fmt.Println(a)
