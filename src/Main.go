@@ -33,7 +33,16 @@ const (
 func main(){
 	// var spzType int
 	// fmt.Printf("%v\n", spzType == catSpz)
-	fmt.Printf("%v\n", catSpz)
+	// fmt.Printf("%v\n", catSpz)
+	var students [3]string
+	// grades := [3]int{97,85,93}
+	fmt.Printf("Students: %v", students)
+	students[0] = "Lisa"
+	students[1] = "Ahmed"
+	students[2] = "Arnold"
+	gradesx := [...]int{97,85,93}
+	fmt.Printf("Students: %v", students)
+	fmt.Printf("Grade: %v", gradesx)
 	// const a int = 42
 	// const b string = "foo"
 	// const c float32 = 3.14
