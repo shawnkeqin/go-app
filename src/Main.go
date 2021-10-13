@@ -31,7 +31,18 @@ const (
 
 
 func main(){
-	a := make([]int, 3)
+	// a := make([]int, 3, 100)
+	a := []int{}
+	a = append(a,1)
+	fmt.Println(a)
+	fmt.Println(len(a))
+	fmt.Println(cap(a))
+	// a = append(a,2,3,4,5)
+	a = append(a, []int{2,3,4,5}...)
+	g := []int{1,2,3,4,5}
+	fmt.Println(g)
+	k := append(g[:2], g[3:]...)
+	fmt.Println(k)
 	fmt.Println(a)
 	fmt.Println(len(a))
 	fmt.Println(cap(a))
