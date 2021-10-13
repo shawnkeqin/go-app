@@ -31,17 +31,43 @@ const (
 
 
 func main(){
+	a := make([]int, 3)
+	fmt.Println(a)
+	fmt.Println(len(a))
+	fmt.Println(cap(a))
 	// var spzType int
 	// fmt.Printf("%v\n", spzType == catSpz)
 	// fmt.Printf("%v\n", catSpz)
+	x := []int{1,2,3,4,5,6,7,8,9,10}
+	y := x[:]
+	z := x[3:]
+	m := x[:6]
+	n := x[3:6]
+	fmt.Println(x)
+	fmt.Println(y)
+	fmt.Println(z)
+	fmt.Println(m)
+	fmt.Println(n)
+	var idtMatrix [3][3]int = [3][3]int{ [3]int{1,0,0}, [3]int{0,0,1}}
+	fmt.Println(idtMatrix)
+	// a := [...]int{1,2,3}
+	// a := []int{1,2,3}
+	// b := a
+	b := a
+	// b[1] = 5 
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Printf("Students: %v\n", cap(b))
 	var students [3]string
 	// grades := [3]int{97,85,93}
-	fmt.Printf("Students: %v", students)
+	// fmt.Printf("Students: %v", students)
 	students[0] = "Lisa"
 	students[1] = "Ahmed"
 	students[2] = "Arnold"
 	gradesx := [...]int{97,85,93}
-	fmt.Printf("Students: %v", students)
+	fmt.Printf("Students: %v\n", students[1])
+	fmt.Printf("Students: %v\n", len(students))
+
 	fmt.Printf("Grade: %v", gradesx)
 	// const a int = 42
 	// const b string = "foo"
