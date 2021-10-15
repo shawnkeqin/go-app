@@ -3,6 +3,13 @@ package main
 import ("fmt"
 )
 
+type Doctor struct {
+	Number int
+	ActorName string
+	Companions []string
+	Episodes []string
+}
+
 
 // var (
 //  actorName string = "Elizabeth"
@@ -31,6 +38,23 @@ const (
 
 
 func main(){
+	aNurse := struct{name string}{name: "brreg"}
+	anotherNurse := aNurse
+	anotherNurse.name = "lord"
+	fmt.Println(aNurse)
+	fmt.Println(anotherNurse)
+	aDoctor := Doctor{
+		Number: 3,
+		ActorName: "bird",
+		Companions: []string{
+			"bferf",
+			"referf",
+			"fereg",
+		},
+	}
+	fmt.Println(aDoctor)
+
+	// statePopulations := make(map[string]int)
 	// a := make([]int, 3, 100)
 	statePopulations := map[string]int{
 		"Cali": 392545346,
@@ -38,7 +62,14 @@ func main(){
 		"New York": 348394975,
 		"Ohio": 3345459045,
 	}
-	fmt.Println(statePopulations)
+	statePopulations["Georgia"] = 10232311
+	fmt.Println(statePopulations["Georgia"])
+	pop, ok := statePopulations["Ohio"]
+	sp := statePopulations
+	delete(sp, "Ohio")
+	fmt.Println(sp)
+	fmt.Println(pop, ok)
+	fmt.Println(len(statePopulations))
 	a := []int{}
 	a = append(a,1)
 	fmt.Println(a)
