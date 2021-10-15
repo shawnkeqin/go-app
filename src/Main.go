@@ -1,14 +1,36 @@
 package main 
 
-import ("fmt"
+import ("fmt" 
+		"reflect"
 )
 
 type Doctor struct {
-	Number int
+	Number int 
 	ActorName string
 	Companions []string
 	Episodes []string
 }
+
+// type Animal struct {
+// 	Name string
+// 	Origin string
+// }
+
+type Animal struct {
+	Name string `required max: "100"`
+	Origin string
+}
+
+
+
+
+type Bird struct {
+	Animal
+	SpeedKPH 	float32 
+	CanFly 	bool 
+}
+
+
 
 
 // var (
@@ -38,6 +60,21 @@ const (
 
 
 func main(){
+	t := reflect.TypeOf(Animal{})
+	field, _ := t.FieldByName("Name")
+	fmt.Println(field.Tag)
+	// b := Bird{
+	// 	Animal: Animal{Name: "Emu", Origin: "Australia"},
+	// 	SpeedKPH: 48,
+	// 	CanFly: false,
+	// }
+	// fmt.Println(b)
+	// b := Bird{}
+	// b.Name = "Emu"
+	// b.Origin = "Australia"
+	// b.SpeedKPH = 48
+	// b.CanFly = false
+	// fmt.Println(b)
 	aNurse := struct{name string}{name: "brreg"}
 	anotherNurse := aNurse
 	anotherNurse.name = "lord"
