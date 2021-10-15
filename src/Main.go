@@ -61,7 +61,10 @@ const (
 
 func main(){
 	number := 50
-	guess := 50 
+	guess := 101
+	if guess < 1 || guess > 100 {
+		fmt.Println("The guess must be between 1 and 100!")
+	}
 	if guess < number {
 		fmt.Println("Too low")
 	}
