@@ -64,6 +64,20 @@ func returnTrue() bool {
 }
 
 func main(){
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+		if i%2 == 0 {
+			i /= 2
+		} else {
+			i = 2*i + 1 
+		}
+	}
+
+
+	for i, j := 0, 0; i < 5; i,j = i+ 1, j + 1 {
+		fmt.Println(i)
+	}
+
 	var i interface{} = [3]int{}
 	switch i.(type) {
 	case int:
