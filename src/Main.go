@@ -2,6 +2,7 @@ package main
 
 import ("fmt" 
 		"reflect"
+		"math"
 )
 
 type Doctor struct {
@@ -57,24 +58,70 @@ const (
 	snakeSpz
 )
 
-
+func returnTrue() bool {
+	fmt.Println("returning true")
+	return true 
+}
 
 func main(){
+	var i interface{} = [3]int{}
+	switch i.(type) {
+	case int:
+		fmt.Println("i is an int")
+	case float64:
+		fmt.Println("i is float64")
+	case string:
+		fmt.Println("i is string")
+	case [3]int:
+		fmt.Println("i is array")
+		break
+		fmt.Println("this will print too ")
+	default:
+		fmt.Println("i is another type")
+}
+
+
+
+	switch i := 2 + 3; i {
+		case 1, 5 , 10:
+			fmt.Println("one")
+			fallthrough
+		case 2, 4, 6:
+			fmt.Println("two")
+		default:
+			fmt.Println("not one or two")
+	}
+
+
+	myNum := 0.1234556
+	if math.Abs(myNum / math.Pow(math.Sqrt(myNum), 2) - 1) < 0.001 {
+		fmt.Println("these are the same")
+	} else {
+		fmt.Println("these are different!")
+	}
+
 	number := 50
 	guess := 101
-	if guess < 1 || guess > 100 {
+	if guess < 1 || returnTrue() || guess > 100 {
 		fmt.Println("The guess must be between 1 and 100!")
+	} else if guess > 100 {
+		fmt.Println("The guess must be less than 100!")
+
+	}else {
+		if guess < number {
+			fmt.Println("Too low")
+		}
+		if guess > number {
+			fmt.Println("Too high")
+		}
+		if guess == number {
+			fmt.Println("You got it!")
+		}
+		fmt.Println(number <= guess, number >= guess, number != guess)
+
 	}
-	if guess < number {
-		fmt.Println("Too low")
-	}
-	if guess > number {
-		fmt.Println("Too high")
-	}
-	if guess == number {
-		fmt.Println("You got it!")
-	}
-	fmt.Println(number <= guess, number >= guess, number != guess)
+
+
 
 
 	t := reflect.TypeOf(Animal{})
