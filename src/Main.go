@@ -64,35 +64,78 @@ func returnTrue() bool {
 }
 
 func main(){
-	for i := 0; i < 5; i++ {
-		fmt.Println(i)
-		if i%2 == 0 {
-			i /= 2
-		} else {
-			i = 2*i + 1 
-		}
+	fmt.Println("start")
+	defer fmt.Println("middle")
+	fmt.Println("end")
+
+	s := "hello Go!"
+	for k,v := range s {
+		fmt.Println(k,string(v))
 	}
+
+	// s := []int{1,2,3}
+	// for k,v := range s {
+	// 	fmt.Println(k,v)
+	// }
+
+
+// Loop: 
+// 	for i := 1; i <= 3; i++{
+// 		for j := 1; j <= 3; j++{
+// 			fmt.Println(i*j)
+// 			if i*j >= 3 {
+// 				break Loop
+// 			}
+// 		}
+// 	}
+
+
+
+	// for i := 0; i < 10; i++ {
+	// 	if i%2 == 0{
+	// 		continue 
+	// 	}
+	// 	fmt.Println(i)
+	// }
+
+	// i := 0
+	// for i < 5 {
+	// 	fmt.Println(i)
+	// 	i++
+	// }
+	// for ; i < 5; i++ {
+	// 	fmt.Println(i)
+	// }
+
+	// for i := 0; i < 5; i++ {
+	// 	fmt.Println(i)
+	// 	if i%2 == 0 {
+	// 		i /= 2
+	// 	} else {
+	// 		i = 2*i + 1 
+	// 	}
+	// }
 
 
 	for i, j := 0, 0; i < 5; i,j = i+ 1, j + 1 {
 		fmt.Println(i)
 	}
 
-	var i interface{} = [3]int{}
-	switch i.(type) {
-	case int:
-		fmt.Println("i is an int")
-	case float64:
-		fmt.Println("i is float64")
-	case string:
-		fmt.Println("i is string")
-	case [3]int:
-		fmt.Println("i is array")
-		break
-		fmt.Println("this will print too ")
-	default:
-		fmt.Println("i is another type")
-}
+// 	var i interface{} = [3]int{}
+// 	switch i.(type) {
+// 	case int:
+// 		fmt.Println("i is an int")
+// 	case float64:
+// 		fmt.Println("i is float64")
+// 	case string:
+// 		fmt.Println("i is string")
+// 	case [3]int:
+// 		fmt.Println("i is array")
+// 		break
+// 		fmt.Println("this will print too ")
+// 	default:
+// 		fmt.Println("i is another type")
+// }
 
 
 
