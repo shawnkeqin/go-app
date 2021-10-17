@@ -67,6 +67,21 @@ func returnTrue() bool {
 }
 
 func main(){
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
+		w.Write([]byte("Hello Go!"))
+	})
+	err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		panic(err.Error())
+	}
+
+
+
+	fmt.Println("start")
+	panic("something bad happened")
+	fmt.Println("end")
+
+
 	res, err := http.Get("http://www.google.com/robots.txt")
 	if err != nil{
 		log.Fatal(err)
