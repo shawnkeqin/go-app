@@ -78,7 +78,12 @@ func main(){
 
 
 	fmt.Println("start")
-	defer fmt.Println("this was deferred")
+	// defer fmt.Println("this was deferred")
+	defer func() {
+		if err := recover(); err != nil {
+			log.Println("Error: ", err)
+		}
+	}()
 	panic("something bad happened")
 	fmt.Println("end")
 
