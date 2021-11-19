@@ -85,6 +85,11 @@ func main(){
 	d := &c[0]
 	e := &c[1]
 	fmt.Printf("%v %p %p\n", c,d,e)
+	var ms *myStrut 
+	// ms = &myStrut{foo: 42}
+	ms = new(myStrut)
+	ms.foo = 42
+	fmt.Println(ms.foo)
 
 
 
@@ -388,5 +393,9 @@ func main(){
 //	i := 42
 //	var j float32 = 27
 	
+}
+
+type myStrut struct {
+	foo int
 }
 
