@@ -74,18 +74,29 @@ func main(){
 	// if err != nil {
 	// 	panic(err.Error())
 	// }
+	// var c int = 42
+	// var d *int = &c
+	// fmt.Println(c, *d)
+	// c = 27 
+	// fmt.Println(c, *d)
+	// *d = 14 
+	// fmt.Println(c, *d)
+	c := [3]int{1,2,3}
+	d := &c[0]
+	e := &c[1]
+	fmt.Printf("%v %p %p\n", c,d,e)
 
 
 
-	fmt.Println("start")
-	// defer fmt.Println("this was deferred")
-	defer func() {
-		if err := recover(); err != nil {
-			log.Println("Error: ", err)
-		}
-	}()
-	panic("something bad happened")
-	fmt.Println("end")
+	// fmt.Println("start")
+	// // defer fmt.Println("this was deferred")
+	// defer func() {
+	// 	if err := recover(); err != nil {
+	// 		log.Println("Error: ", err)
+	// 	}
+	// }()
+	// panic("something bad happened")
+	// fmt.Println("end")
 
 
 	res, err := http.Get("http://www.google.com/robots.txt")
