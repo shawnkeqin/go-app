@@ -76,6 +76,15 @@ func shoutOut(greeting, name string) {
 	fmt.Println(name)
 }
 
+
+func sum(values ...int) (result int){
+	fmt.Println(values)
+	for _, v := range values {
+		result += v 
+	}
+	return 
+}
+
 func main(){
 	// http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
 	// 	w.Write([]byte("Hello Go!"))
@@ -105,6 +114,8 @@ func main(){
 	name := "Stacey"
 	shoutOut(greeting,name)
 	fmt.Println(name)
+	s := sum(1,2,3,4,5)
+	fmt.Println("The sum is ", s)
 	// fmt.Println("start")
 	// // defer fmt.Println("this was deferred")
 	// defer func() {
@@ -134,10 +145,10 @@ func main(){
 	defer fmt.Println("middle")
 	fmt.Println("end")
 
-	s := "hello Go!"
-	for k,v := range s {
-		fmt.Println(k,string(v))
-	}
+	// s := "hello Go!"
+	// for k,v := range s {
+	// 	fmt.Println(k,string(v))
+	// }
 
 	// s := []int{1,2,3}
 	// for k,v := range s {
