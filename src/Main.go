@@ -66,6 +66,16 @@ func returnTrue() bool {
 	return true 
 }
 
+func sayMessage(msg string) {
+	fmt.Println(msg)
+}
+
+func shoutOut(greeting, name string) {
+	fmt.Println(greeting,name)
+	name = "Ted"
+	fmt.Println(name)
+}
+
 func main(){
 	// http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
 	// 	w.Write([]byte("Hello Go!"))
@@ -80,19 +90,21 @@ func main(){
 	// c = 27 
 	// fmt.Println(c, *d)
 	// *d = 14 
-	// fmt.Println(c, *d)
-	c := [3]int{1,2,3}
-	d := &c[0]
-	e := &c[1]
-	fmt.Printf("%v %p %p\n", c,d,e)
-	var ms *myStrut 
-	// ms = &myStrut{foo: 42}
-	ms = new(myStrut)
-	ms.foo = 42
-	fmt.Println(ms.foo)
-
-
-
+	// // fmt.Println(c, *d)
+	// c := [3]int{1,2,3}
+	// d := &c[0]
+	// e := &c[1]
+	// fmt.Printf("%v %p %p\n", c,d,e)
+	// var ms *myStrut 
+	// // ms = &myStrut{foo: 42}
+	// ms = new(myStrut)
+	// ms.foo = 42
+	// fmt.Println(ms.foo)
+	sayMessage("hello go!")
+	greeting := "Hello"
+	name := "Stacey"
+	shoutOut(greeting,name)
+	fmt.Println(name)
 	// fmt.Println("start")
 	// // defer fmt.Println("this was deferred")
 	// defer func() {
