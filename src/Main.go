@@ -1,14 +1,19 @@
 package main
 
-import "fmt"
+import ("fmt" 
+"time")
 
 func main() {
-	go sayHello()
+	var msg = "Hello"
+	go func(){
+		fmt.Println(msg)
+	}()
+	time.Sleep(100 * time.Millisecond)
 }
 
-func sayHello(){
-	fmt.Println("Hello all!")
-}
+// func sayHello(){
+// 	fmt.Println("Hello all!")
+// }
 
 // import ("fmt" 
 // 		"reflect"
