@@ -1,14 +1,21 @@
 package main
 
 import ("fmt" 
-"time")
+		"sync"
+)
+
+var wg = sync.WaitGroup{}
+
 
 func main() {
 	var msg = "Hello"
-	go func(){
+	wg.Add(1)
+	go func(msg string){
 		fmt.Println(msg)
-	}()
-	time.Sleep(100 * time.Millisecond)
+		wg.Done()
+	}(msg)
+	msg = "Goodbye"
+	wg.Wait()
 }
 
 // func sayHello(){
