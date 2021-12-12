@@ -1,23 +1,38 @@
 package main
 
 import ("fmt" 
+		"runtime"
 		"sync"
 )
 
 var wg = sync.WaitGroup{}
+var counter = 0
+var m = sync.RWMutex{}
 
 
 func main() {
-	var msg = "Hello"
-	wg.Add(1)
-	go func(msg string){
-		fmt.Println(msg)
-		wg.Done()
-	}(msg)
-	msg = "Goodbye"
+	runtime.GOMAXPROCS(100)
+	for i := 0; i < 10; i++{
+		wg.Add(2)
+		go sayHello()
+		go increment()
+	}
 	wg.Wait()
 }
 
+func sayHello(){
+	m.RLock()
+	fmt.Printf("Hello #%v\n", counter)
+	m.RUnlock()
+	wg.Done()
+}
+
+func increment(){
+	m.RLock()
+	counter++
+	m.RUnlock()
+	wg.Done()
+}
 // func sayHello(){
 // 	fmt.Println("Hello all!")
 // }
